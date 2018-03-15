@@ -4,7 +4,6 @@ use ::std::borrow::Cow;
 use ::url::Url;
 use ::std::env;
 
-
 fn main() {
     let argv = env::args().collect::<Vec<_>>();
     let flag = |strs: &[&str]| {
@@ -24,7 +23,7 @@ fn main() {
             .filter(|&(ref key, _)| key == &Cow::Borrowed("v"))
             .map(|(_, val)| val);
         if let Some(Cow::Borrowed(id)) = id_iter.next() {
-            if ids_only {
+            if !ids_only {
                 writelck.write(b"https://youtu.be/");
             }
             writelck.write(id.as_bytes());
