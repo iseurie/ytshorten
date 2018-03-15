@@ -1,0 +1,6 @@
+[package]
+name = "ytshorten"
+version = "0.1.0"
+authors = ["iseurie@gmail.com"]
+[dependencies]
+url = "1.6"
